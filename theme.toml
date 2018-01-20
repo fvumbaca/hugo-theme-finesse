@@ -1,0 +1,12 @@
+name = "Finesse"
+license = "MIT"
+licenselink = "https://github.com/fvumbaca/hugo-finesse/blob/master/LICENSE.md"
+description = "A minimal hugo theme."
+homepage = "https://fvumba.ca/"
+tags = ["minimalist", "blog"]
+features = ["blog", "google analytics"]
+min_version = "0.33"
+
+[author]
+  name = "Frank Vumbaca"
+  homepage = "https://fvumba.ca"
