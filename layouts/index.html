@@ -3,20 +3,16 @@
 
     <div class="row">
         <div class="col">
-
             <h4>Blog Posts</h4>
             <ul>
-                {{range where .Site.Pages "Dir" "blog/"}}
+                {{ $all_posts :=  where .Site.Pages "Dir" "blog/"}}
+                {{ range first .Site.Params.featuredPostCount (sort $all_posts "Date" "desc")}}
                     <li>
-                        <small>
-
-                        {{.Date.Format "Jan 01, 2018"}}
-                        </small>
+                        <small>{{.Date.Format "Jan 01, 2018"}}</small>
                         <strong><a href="{{.URL}}">{{.Title}}</a></strong>
                     </li>
                 {{end}}
             </ul>
-
         </div>
     </div>
 

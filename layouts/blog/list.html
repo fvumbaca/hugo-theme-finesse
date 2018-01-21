@@ -1,0 +1,25 @@
+{{ partial "header.html" .}}
+
+<h4>Archive</h4>
+
+<ul>
+    {{ $all_posts := where .Site.Pages "Dir" "blog/"}}
+    {{range $all_posts.GroupByDate "Jan, 2006" "desc" }}
+    <li>
+        <aside>{{ .Key }}</aside>
+        <ul>
+            {{range sort .Pages "Date" "desc" }}
+            <li>
+                <a href="{{.URL}}">
+                    {{.Title}}
+                    {{.Date}}
+                </a>
+            </li>
+            {{end}}
+
+        </ul>
+    </li>
+    {{end}}
+</ul>
+
+{{ partial "footer.html" . }}

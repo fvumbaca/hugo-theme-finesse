@@ -12,29 +12,19 @@
         {{end}}
     </title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style.css" />
-
-    <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{.Site.GoogleAnalytics}}"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', '{{.Site.GoogleAnalytics}}');
-    </script>
+    {{ partial "header_includes.html" . }}
+    {{ partial "google_analytics.html" . }}
 
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <h1> {{.Site.Title}} 
-            <small> 
+            <img width="120px" height="100px" src="{{ .Site.Params.logoImg }}" />
+            <h1> {{.Site.Title}}</h1>
+            <hr />
+            <h1><small> 
                 {{range .Site.Sections}} 
-                - <a href="{{.URL}}">{{.Title}}</a>
+                <a href="{{.URL}}">{{.Title}}</a>
                 {{end}}</small></h1>
         </div>
 

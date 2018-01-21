@@ -1,3 +1,50 @@
+    <div class="row">
+        <div class="col">
+            {{ if .Site.Params.github }}
+                <a href="https://github.com/{{ .Site.Params.github }}" target="_blank">
+                    <!-- <i class="fab fa-github" title="github"></i> -->
+                    <i class="fab fa-github-square" title="github"></i>
+                </a>
+            {{ end }}
+            
+            {{ if .Site.Params.twitter }}
+                <a href="https://twitter.com/{{ .Site.Params.twitter }}" target="_blank">
+                    <!-- <i class="icon ion-social-twitter" title="twitter"></i> -->
+                    <i class="fab fa-twitter-square" title="twitter"></i>
+                </a>
+            {{ end }}
+
+            {{ if .Site.Params.linkedin }}
+                <a href="https://www.linkedin.com/in/{{ .Site.Params.linkedin }}" target="_blank">
+                    <!-- <i class="icon ion-social-linkedin" title="linkedin"></i> -->
+                    <i class="fab fa-linkedin" title="linkedin"></i>
+                </a>
+            {{ end }}
+
+            {{ if .Site.Params.email }}
+                <a href="mailto:{{ .Site.Params.email }}">
+                    <!-- <i class="icon ion-ios-email larger" title="email"></i> -->
+                    <i class="fas fa-envelope-square" title="email"></i>
+                </a>
+            {{ end }}
+
+            {{ if .Site.RSSLink }}
+                <a href="{{ .Site.RSSLink }}">
+                    <!-- <i class="icon ion-social-rss larger" title="rss"></i> -->
+                    <i class="fas fa-rss-square" title="rss"></i>
+                </a>
+            {{ end }}
+        </div>
+        <div class="col">
+            {{ if .Site.Params.issueLink }}
+            <a href="{{ .Site.Params.issueLink }}">Found an error?</a>
+            {{ end }}
+
+            <i class="far fa-copyright"></i>
+            {{ .Site.Copyright }}
+        </div>
+
+    </div>
 </div>
 </body>
 </html>
