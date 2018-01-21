@@ -1,17 +1,23 @@
 {{ partial "header.html" .}}
-    <div class="row">
-        <ul>
-            {{range .Site.Pages}}
-                <li><a href="{{.URL}}">{{.Title}}</a> - {{.Type}}</li>
-            {{end}}
-        </ul>
-    </div>
+
 
     <div class="row">
-        <ul>
-            {{range .Site.Sections}}
-            <li>{{.Date.Format "January 2, 2006"}} - <a href="{{.URL}}">{{.Title}}</a></li>
-            {{end}}
-        </ul>
+        <div class="col">
+
+            <h4>Blog Posts</h4>
+            <ul>
+                {{range where .Site.Pages "Dir" "blog/"}}
+                    <li>
+                        <small>
+
+                        {{.Date.Format "Jan 01, 2018"}}
+                        </small>
+                        <strong><a href="{{.URL}}">{{.Title}}</a></strong>
+                    </li>
+                {{end}}
+            </ul>
+
+        </div>
     </div>
+
 {{ partial "footer.html" .}}

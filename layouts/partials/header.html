@@ -1,10 +1,21 @@
-<html>
-<head>
-
-    <title>{{.Site.Title}}</title>
+<!doctype html>
+<html lang="{{ $.Site.Language.Lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <base href="{{ $.Site.BaseURL }}">
+    <title>
+        {{if eq .Site.Title .Title }}
+            {{.Title}}
+        {{else}}
+            {{.Site.Title}} - {{.Title}}
+        {{end}}
+    </title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{.Site.GoogleAnalytics}}"></script>
