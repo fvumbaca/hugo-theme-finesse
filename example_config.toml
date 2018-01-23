@@ -1,0 +1,16 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "finesse"
+copyright = ""
+pluralizelisttitles = false
+
+
+[params]
+logoImg = "img/logo.png"
+logoImgWhite = "img/logo_white.png"
+featuredPostCount = 10
+github = "githubUsername"
+linkedin = "linkedinProfile"
+twitter = "twitterUser"
+
