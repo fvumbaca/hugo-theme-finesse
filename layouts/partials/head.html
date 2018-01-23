@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="{{ $.Site.Language.Lang }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <base href="{{ $.Site.BaseURL }}">
+    <title>
+        {{if eq .Site.Title .Title }}
+            {{.Title}}
+        {{else}}
+            {{.Site.Title}} - {{.Title}}
+        {{end}}
+    </title>
+
+    {{ partial "head_includes.html" . }}
+    {{ partial "google_analytics.html" . }}
+</head>
+
+<body>
+    <div class="container">

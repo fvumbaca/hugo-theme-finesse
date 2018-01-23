@@ -1,18 +1,18 @@
 {{ partial "header.html" .}}
-
-
     <div class="row">
         <div class="col">
-            <h4>Blog Posts</h4>
-            <ul>
-                {{ $all_posts :=  where .Site.Pages "Dir" "blog/"}}
-                {{ range first .Site.Params.featuredPostCount (sort $all_posts "Date" "desc")}}
-                    <li>
-                        <small>{{.Date.Format "Jan 01, 2018"}}</small>
-                        <strong><a href="{{.URL}}">{{.Title}}</a></strong>
-                    </li>
-                {{end}}
-            </ul>
+            <section class="fn-space-section">
+                <h4 class="" >Recent Blog Posts</h4>
+                <ul class="fn-clean-list">
+                    {{ $all_posts :=  where .Site.Pages "Dir" "blog/"}}
+                    {{ range first .Site.Params.featuredPostCount (sort $all_posts "Date" "desc")}}
+                        <li>
+                            <small>{{.Date.Format "Jan 02, 2006"}}</small>
+                            <strong><a href="{{.URL}}">{{.Title}}</a></strong>
+                        </li>
+                    {{end}}
+                </ul>
+            </section>
         </div>
     </div>
 
